@@ -26,3 +26,6 @@ app.get('/', (req, res) => {
 
 //pets routes
 app.use('/pets', require('./routers/pets'));
+
+//user routes
+app.use('/user', require('./routers/user'));

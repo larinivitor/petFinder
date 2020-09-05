@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Pet = require('../models/Pet');
+const User = require('../models/User');
 
 router.get('/test', (req,res) => {
     res.send('deu certo');
@@ -8,15 +8,13 @@ router.get('/test', (req,res) => {
 
 //add pet via post
 router.post('/add', (req, res) => {
-    let {Nome, Raca, Idade, Peso, Cidade, Email} = req.body;
+    let {nome, email, senha, cidade} = req.body;
 
-    Pet.create({
-        Nome,
-        Raca, 
-        Idade, 
-        Peso, 
-        Cidade, 
-        Email
+    User.create({
+        nome,
+        email,
+        senha,
+        cidade
     })
     .then(() => res.redirect('/'))
     .catch(err => console.log(err));

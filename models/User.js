@@ -1,25 +1,19 @@
 const Sequelize = require('sequelize');
 const db = require('../db/connection');
 
-const Pet = db.define('pets', {
-    Nome: {
+const User = db.define('users', {
+    nome: {
         type: Sequelize.STRING,    
     },
-    Raca: {
+    email: {
         type: Sequelize.STRING,    
     },
-    Idade: {
+    senha: {
         type: Sequelize.STRING,    
     },
-    Peso: {
-        type: Sequelize.STRING,    
-    },
-    Cidade: {
-        type: Sequelize.STRING,    
-    },
-    Email: {
+    cidade: {
         type: Sequelize.STRING,    
     },
 });
 
-module.exports = Pet;
+module.exports = User;
