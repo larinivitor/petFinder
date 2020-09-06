@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Pet = require('../models/Pet');
-
+var isUser = true;
 router.get('/test', (req,res) => {
     res.send('deu certo');
 });

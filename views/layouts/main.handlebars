@@ -13,49 +13,60 @@
 </head>
 
 <body>
-  {{#if isUser}}
-  
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Pet Finder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Ver Pets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btn btn-primary" href="/pets/add">Incluir Pet</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  {{#if (loggedIn value1)}}
+
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Pet Finder</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Ver Pets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="/pets/add">Incluir Pet</a>
+          </li>
+          <form class="nav-item" action="/users/logout" method="GET">
+            <div>
+              <button type="submit" class="nav-link btn btn-primary">Logout</button>
+            </div>
+          </form>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   {{else}}
 
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Pet Finder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Ver Pets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btn btn-primary" href="/pets/add">Incluir Pet</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Pet Finder 2</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+
+          <form class="nav-item fixedItens" action="/users/login" method="GET" >
+            <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu e-mail" required>
+            <input type="password" class="form-control login-form" id="senha" name="senha"
+              placeholder="Digite a sua senha" required>
+
+            <button type="submit" class="nav-link btn btn-primary">Entrar</button>
+                      <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="/users/addUser">Cadastrar</a>
+          </li>
+          </form>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   {{/if}}
 

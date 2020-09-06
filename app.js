@@ -6,9 +6,10 @@ const db = require('./db/connection');
 const bodyParser = require('body-parser');
 const Pet = require('./models/Pet');
 const Sequelize = require ('sequelize');
+const Handlebars = require('handlebars');
 const Op = Sequelize.Op;
 
-const PORT = 3001;
+const PORT = 3000;
 
 app.listen(PORT, function(){
     console.log(`O Express eta ok na porta ${PORT}`);
@@ -71,8 +72,14 @@ app.get('/', (req, res) => {
     
   });
 
+
+Handlebars.registerHelper('loggedIn', function (value) {
+    return value !== undefined;
+  });
+
 //pets routes
 app.use('/pets', require('./routers/pets'));
 
 //user routes
 app.use('/users', require('./routers/users'));
+

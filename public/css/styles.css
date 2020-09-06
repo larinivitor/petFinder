@@ -26,13 +26,17 @@
     color: #FFF;
     background-color: #F03E3E;
     border: 1px solid transparent;
-    border-radius: 0;
   }
   
   .nav-link.btn.btn-primary:hover, #search-form button:hover, .list-group-item a:hover, #form-box button:hover {
     background-color: #FFF;
     color: #F03E3E;
     border-color: #F03E3E;
+  }    
+
+  .login-form{
+    margin-left: 2%;
+    margin-right: 2%;
   }
   
   /* banner */
@@ -238,10 +242,23 @@
     color: #FFF;
     text-decoration: none;
   }
+
+  .fixedItens{
+    display: flex;
+  }
   
   /* responsivo */
   
   @media (max-width: 481px) {
+
+    .fixedItens{
+      display: unset;
+    }
+
+    .login-form {
+      margin-left: 0%;
+      margin-right: 0%;
+  }
   
     /* navbar */
     #navbarNav {
