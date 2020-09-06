@@ -1,0 +1,17 @@
+<div id="pet-view-container" class="container">
+  <div class="row text-center">
+    <a class="back-link main-color" href="/">Voltar</a>
+    <div id="img-container" class="col-md-12">
+      <img src="/img/pngwing.com.png" alt="Company">
+    </div>
+    <div class="col-md-12">
+      <h1 class="main-color">{{pet.dataValues.Nome}}</h1>
+      <p><span class="bold">A raça dele é:</span> {{pet.dataValues.Raca}}</p>
+      <p><span class="bold">Ele tem: </span> {{pet.dataValues.Idade}}<span> de vida</span></p>
+      <p><span class="bold">Atualmente ele mora em </span>{{pet.dataValues.Cidade}}</p>
+      <p>
+        Para adotar <span class="bold main-color">{{pet.dataValues.Nome}}</span> envie um e-mail para <a class="main-color" href="mail:to{{pet.dataValues.Email}}">{{pet.dataValues.Email}}</a>
+      </p>
+    </div>
+  </div>
+</div>

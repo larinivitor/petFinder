@@ -4,10 +4,11 @@ const app = express();
 const path = require('path');
 const db = require('./db/connection');
 const bodyParser = require('body-parser');
-
 const Pet = require('./models/Pet');
+const Sequelize = require ('sequelize');
+const Op = Sequelize.Op;
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.listen(PORT, function(){
     console.log(`O Express eta ok na porta ${PORT}`);
@@ -74,4 +75,4 @@ app.get('/', (req, res) => {
 app.use('/pets', require('./routers/pets'));
 
 //user routes
-app.use('/user', require('./routers/user'));
+app.use('/users', require('./routers/users'));
